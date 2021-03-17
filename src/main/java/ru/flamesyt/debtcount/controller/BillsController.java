@@ -10,9 +10,8 @@ import javax.websocket.server.PathParam;
 public class BillsController {
 
     @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
     @GetMapping("/")
-    public static String getAllBills(@RequestParam(value = "filter", required = false) String filter) {
+    public String getAllBills(@RequestParam(value = "filter", required = false) String filter) {
         if (filter != null) {
             return filter;
         }
@@ -20,15 +19,14 @@ public class BillsController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
     @GetMapping("/{id}")
-    public static String getBillById(@PathVariable("id") String id) {
+    public String getBillById(@PathVariable("id") String id) {
         return "ID " + id;
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping
-    public static String postBill(@RequestBody String billMock) {
+    public String postBill(@RequestBody String billMock) {
         return "Bill " + billMock + " Successfully added";
     }
 }

@@ -12,7 +12,7 @@ public class StatusController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/")
-    public static String getStatus() {
+    public String getStatus() {
         return "something";
     }
 }
