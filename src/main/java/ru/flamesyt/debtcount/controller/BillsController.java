@@ -2,6 +2,7 @@ package ru.flamesyt.debtcount.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.flamesyt.debtcount.entity.BillEntity;
 
 import javax.websocket.server.PathParam;
 
@@ -26,7 +27,7 @@ public class BillsController {
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping
-    public String postBill(@RequestBody String billMock) {
-        return "Bill " + billMock + " Successfully added";
+    public String postBill(@RequestBody BillEntity bill) {
+        return "Bill " + bill.getId() + " Successfully added";
     }
 }

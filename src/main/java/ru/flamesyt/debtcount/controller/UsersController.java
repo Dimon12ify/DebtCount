@@ -2,6 +2,7 @@ package ru.flamesyt.debtcount.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.flamesyt.debtcount.entity.UserEntity;
 
 
 @RequestMapping("/users")
@@ -25,7 +26,7 @@ public class UsersController {
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping
-    public String addUser(@RequestBody String user) {
-        return "User " + user + " successfully added";
+    public String addUser(@RequestBody UserEntity user) {
+        return "User " + user.getName() + " successfully added";
     }
 }
