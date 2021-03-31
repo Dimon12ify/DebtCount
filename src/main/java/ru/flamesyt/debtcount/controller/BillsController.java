@@ -10,7 +10,7 @@ import javax.websocket.server.PathParam;
 public class BillsController {
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public String getAllBills(@RequestParam(value = "filter", required = false) String filter) {
         if (filter != null) {
             return filter;
@@ -19,7 +19,7 @@ public class BillsController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/{id}")
+    @GetMapping("/bill/{id}")
     public String getBillById(@PathVariable("id") String id) {
         return "ID " + id;
     }

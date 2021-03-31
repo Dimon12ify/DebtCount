@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class StatusController {
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public String getStatus() {
         return "something";
     }
